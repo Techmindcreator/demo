@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        background-color: rgb(239, 219, 194);
+      
+      }
+      #form {
+        text-align: center;
+        width: 300px;
+        margin: auto;
+        padding: 7px;
+
+        border: solid rgb(157, 213, 240) 5px;
+      }
+      #form div {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: inline-block;
+        margin-right: 60px;
+        width: 50px;
+        border: solid rgb(243, 203, 203) 2px;
+      }
+      #form div div input{
+        /* margin: 10px; */
+        width: 100px;
+      }
+       #form div div select{
+        margin: 10px;
+        width: 250px;
+      }
+      #divtable{
+        align-items: center;
+      
+        width: 400px;
+        margin-top: 100px;
+        margin-left: 500px;
+      }
+      #table{
+        border: solid rgb(152, 147, 147) 3px;
+        padding: 10px;
+      }
+      th{
+        
+        padding: 10px;
+        border: solid 1px gray;
+      }
+      td{
+         padding: 10px;
+        border: solid 1px gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form">
+      <div>
+        <label for="name">username</label>
+        <input type="text" name="" id="name" />
+      </div>
+      <div>
+        <label for="age">age</label> 
+        <input type="text" name="" id="age" />
+      </div>
+      <div>
+        <label for="gender">Gender</label>
+      
+        <input type="radio" name="gender" id="male" style="width: 30px;"/>Male
+        <input type="radio" name="gender" id="female" style="width: 30px;" />Female
+        
+      </div>
+      <div>
+        <label for="course">Course</label>
+        <select name="" id="course" style="width: 150px;">
+          <option value="Java">Java</option>
+          <option value="HTML&CSS">HTML&CSS</option>
+          <option value="Java Script">Java Script</option>
+          <option value="SQL">SQL</option>
+        </select>
+      </div>
+      <div>
+        <label for="gmail">Gmail</label> <input type="text" id="gmail" />
+      </div>
+      <button id="save" onclick="save()">Save</button>
+    </div>
+    <div id="divtable">
+      <table id="table">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Cource</th>
+          <th>Gmail</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>Arun</td>
+          <td>21</td>
+          <td>Male</td>
+          <td>java</td>
+          <td>arun123@gmail.com</td>
+          <td><button onclick="Removerow(event)">Delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script>
+    function  save(){
+   let arr=[  document.getElementById("name"),
+     document.getElementById("age"),
+     document.querySelector('input[name="gender"]:checked'),
+     document.getElementById("course"),
+    document.getElementById("gmail")];
+     
+     var table =document.getElementById("table");
+     var row=document.createElement("tr"); 
+     for(count=0;count<5;count++){
+        var td=document.createElement("td");
+        td.innerText=arr[count].value;
+        row.appendChild(td);
+
+     }
+    var btn= document.createElement("td");
+    btn.innerHTML="<button onclick='Removerow(event)'>Delete</button>";
+    row.appendChild(btn)
+     table.appendChild(row);
+    }
+    function Removerow(event){
+      event.target.parentElement.parentElement.remove();
+    }
+  </script>
+</html>

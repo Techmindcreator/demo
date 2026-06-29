@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
+      #head {
+        text-align: center;
+      }
+      #result {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="head">Guess the Number</h1>
+    <h2 id="text">Enter the Number from 1 to 10</h2>
+    <input
+      id="input"
+      type="text"
+      placeholder="Enter the Number"
+      min="1"
+      max="10"
+    />
+    <button onclick="check()">Click</button>
+    <p id="result">Your Score:0 your chance:10</p>
+    <input type="text" id="text1" />
+    <h3 id="displaycontent"></h3>
+  </body>
+  <script>
+    // var count = 0;
+    // var countlife = 10;
+
+    // var random = (Math.floor(Math.random() * 10)) + 1;
+    // function check() {
+
+    //   var input = Number(document.getElementById("input").value);
+    //   var p = document.getElementById("result");
+    //   if (input == random) {
+    //     count=countlife*10;
+    //     countlife--;
+    //     p.innerText = " Your Score:" + count + " your chance:" + countlife;
+    //   } else {
+    //     countlife--;
+    //     p.innerText = " Your Score:" + count + " your chance:" + countlife;
+    //   }
+    // }
+    var text = document.getElementById("text1");
+    var display = document.getElementById("displaycontent");
+    text.addEventListener("contextmenu",function () {
+      
+      display.innerText="hello Arun";
+    });
+  </script>
+</html>
